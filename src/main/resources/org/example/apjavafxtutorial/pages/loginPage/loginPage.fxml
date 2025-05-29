@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane styleClass="root-pane" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <GridPane styleClass="login-grid" AnchorPane.topAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints percentWidth="50" hgrow="ALWAYS"/>
+          <ColumnConstraints percentWidth="50" hgrow="ALWAYS"/>
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints percentHeight="100" vgrow="ALWAYS"/>
+        </rowConstraints>
+         <children>
+            <VBox alignment="CENTER" styleClass="side-image-pane" GridPane.columnIndex="1" GridPane.rowIndex="0" VBox.vgrow="ALWAYS">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" styleClass="side-image">
+                     <image>
+                        <Image url="@../../images/vegan-farfalle-pasta-with-spinach-sauce-with-fried-chickpeas.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" styleClass="login-pane" VBox.vgrow="ALWAYS" GridPane.rowIndex="0" GridPane.columnIndex="0">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" styleClass="logo-image">
+                     <image>
+                        <Image url="@../../images/generate application logo, kalbasa image -Photoroom.png" />
+                     </image>
+                  </ImageView>
+                  <VBox alignment="CENTER" styleClass="login-header">
+                     <children>
+                        <Label styleClass="login-title" text="Login" />
+                        <Label styleClass="login-subtitle" text="Enter personal details to log into your account">
+                           <font>
+                              <Font size="8.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox spacing="16.0" styleClass="login-fields">
+                     <children>
+                        <VBox styleClass="input-group">
+                           <children>
+                              <Label styleClass="input-label" text="Username" />
+                              <TextField fx:id="usernameField" styleClass="input-field" />
+                           </children>
+                        </VBox>
+                        <VBox styleClass="input-group">
+                           <children>
+                              <Label styleClass="input-label" text="Password" />
+                              <PasswordField fx:id="passwordField" styleClass="input-field" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" styleClass="login-actions">
+                     <children>
+                        <AnchorPane>
+                           <children>
+                              <Button alignment="CENTER" mnemonicParsing="false" maxWidth="Infinity" styleClass="login-button" text="Login" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                        <Label styleClass="signup-label" text="Don't have an account yet? create " />
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+               </padding>
+            </VBox>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

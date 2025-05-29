@@ -1,0 +1,145 @@
+.root-pane {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #f8fafc 0%, #e0e7ef 100%);
+}
+
+.login-grid {
+    -fx-background-color: rgba(255,255,255,0.95);
+    -fx-background-radius: 18px;
+    -fx-effect: dropshadow(gaussian, #b0b8c1, 12, 0.2, 0, 4);
+    -fx-padding: 2vw 2vw 2vw 2vw;
+    -fx-hgap: 0;
+    -fx-vgap: 0;
+    -fx-pref-width: 70vw;
+    -fx-pref-height: 70vh;
+    -fx-min-width: 320px;
+    -fx-min-height: 400px;
+}
+
+.side-image-pane {
+    -fx-background-color: transparent;
+    -fx-alignment: center;
+    -fx-padding: 2vw;
+}
+
+.side-image {
+    -fx-effect: dropshadow(gaussian, #b0b8c1, 10, 0.2, 0, 2);
+    -fx-background-radius: 12px;
+    -fx-max-width: 100%;
+    -fx-max-height: 30vh;
+}
+
+.login-pane {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 18px;
+    -fx-padding: 2vw 3vw 2vw 3vw;
+    -fx-spacing: 12;
+    -fx-alignment: center;
+    -fx-effect: dropshadow(gaussian, #e0e7ef, 8, 0.15, 0, 2);
+    -fx-min-width: 260px;
+}
+
+.logo-image {
+    -fx-effect: dropshadow(gaussian, #b0b8c1, 8, 0.2, 0, 2);
+    -fx-background-radius: 12px;
+    -fx-padding: 0 0 8 0;
+    -fx-max-width: 100%;
+    -fx-max-height: 20vh;
+}
+
+.login-header {
+    -fx-spacing: 2;
+    -fx-alignment: center;
+}
+
+.login-title {
+    -fx-font-size: 2em;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2d3748;
+    -fx-padding: 8 0 0 0;
+}
+
+.login-subtitle {
+    -fx-font-size: 0.95em;
+    -fx-text-fill: #6b7280;
+    -fx-padding: 0 0 12 0;
+}
+
+.login-fields {
+    -fx-spacing: 16;
+    -fx-padding: 12 0 0 0;
+    -fx-pref-width: 100%;
+}
+
+.input-group {
+    -fx-spacing: 4;
+}
+
+.input-label {
+    -fx-font-size: 1em;
+    -fx-text-fill: #374151;
+    -fx-font-weight: 500;
+    -fx-padding: 0 0 2 0;
+}
+
+.input-field {
+    -fx-background-color: #f3f4f6;
+    -fx-background-radius: 8px;
+    -fx-border-color: #cbd5e1;
+    -fx-border-radius: 8px;
+    -fx-padding: 8 12 8 12;
+    -fx-font-size: 1em;
+    -fx-text-fill: #2d3748;
+    -fx-effect: dropshadow(gaussian, #e0e7ef, 2, 0.05, 0, 1);
+    -fx-pref-width: 100%;
+    -fx-min-width: 120px;
+}
+
+.input-field:focused {
+    -fx-border-color: #6366f1;
+    -fx-background-color: #eef2ff;
+}
+
+.login-actions {
+    -fx-spacing: 8;
+    -fx-padding: 16 0 0 0;
+    -fx-alignment: center;
+}
+
+.login-button {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 0%, #6366f1 0%, #60a5fa 100%);
+    -fx-background-radius: 8px;
+    -fx-text-fill: white;
+    -fx-font-size: 1.1em;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, #6366f1, 4, 0.15, 0, 1);
+    -fx-cursor: hand;
+    -fx-border-width: 0;
+    -fx-padding: 8 0 8 0;
+    -fx-pref-width: 100%;
+    -fx-min-width: 120px;
+}
+
+.login-button:hover {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 0%, #818cf8 0%, #93c5fd 100%);
+}
+
+.signup-label {
+    -fx-font-size: 0.95em;
+    -fx-text-fill: #64748b;
+    -fx-padding: 8 0 0 0;
+}
+
+/* Responsive: Stack columns on small screens */
+@media screen and (max-width: 700px) {
+    .login-grid {
+        -fx-pref-width: 98vw;
+        -fx-pref-height: 98vh;
+        -fx-padding: 1vw;
+    }
+    .side-image-pane {
+        -fx-padding: 1vw;
+    }
+    .login-pane {
+        -fx-padding: 1vw 2vw 1vw 2vw;
+    }
+}
