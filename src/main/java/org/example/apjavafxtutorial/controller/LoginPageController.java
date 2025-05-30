@@ -10,7 +10,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Objects;
 
 public class LoginPageController {
 
@@ -31,7 +30,6 @@ public class LoginPageController {
         System.out.println("Username: " + username);
         System.out.println("Password: " + password);
 
-        // Here you can add your login validation logic
         if (!username.isEmpty() && !password.isEmpty()) {
             try {
                 FXMLLoader loader = new FXMLLoader(
@@ -55,18 +53,15 @@ public class LoginPageController {
             }
         }
 
-        // Clear the fields after login attempt
         usernameField.clear();
         passwordField.clear();
     }
 
     @FXML
     private void handleCancelButtonAction() {
-        // Clear the fields when cancel is pressed
         usernameField.clear();
         passwordField.clear();
 
-        // Optionally, you can close the window or perform other actions
         System.out.println("Login cancelled.");
     }
 }
