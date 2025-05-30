@@ -10,4 +10,6 @@ module org.example.apjavafxtutorial {
 
     opens org.example.apjavafxtutorial to javafx.fxml;
     exports org.example.apjavafxtutorial;
+    exports org.example.apjavafxtutorial.controller;
+    opens org.example.apjavafxtutorial.controller to javafx.fxml;
 }

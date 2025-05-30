@@ -1,32 +1,21 @@
 package org.example.apjavafxtutorial;
 
-import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.util.Objects;
 
-public class HelloApplication extends Application {
+public class Application extends javafx.application.Application {
+
+    private static final String TITLE = "JavaFX Application";
+    private static final int WIDTH = 800;
+    private static final int HEIGHT = 600;
+    private Scene currentScene;
+
     @Override
     public void start(Stage stage) throws Exception {
-//        Stage primaryStage = new Stage();
-//        primaryStage.setTitle("JavaFX Application");
-//        primaryStage.setWidth(1000);
-//        primaryStage.setHeight(600);
-//        AnchorPane root = FXMLLoader.load(getClass().getResource(
-//            "/org/example/apjavafxtutorial/pages/loginPage/loginPage.fxml"
-//        ));
-//        primaryStage.setScene(new Scene(root));
-//        primaryStage.show();
-
         // Make sure the path matches your resources folder structure
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(
                 "/org/example/apjavafxtutorial/pages/loginPage/loginPage.fxml"
@@ -35,7 +24,7 @@ public class HelloApplication extends Application {
 
         stage.setTitle("JavaFX Application");
         Scene scene = new Scene(root);
-        stage.setWidth(1000);
+        stage.setWidth(800);
         stage.setHeight(600);
         stage.setScene(scene);
         stage.show();
@@ -55,8 +44,6 @@ public class HelloApplication extends Application {
 //        root.getChildren().add(btn);
 //        stage.setScene(new Scene(root, 300, 250));
 //        stage.show();
-
-
     }
 
     public static void main(String[] args) {

@@ -1,0 +1,10 @@
+.root {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #f8fafc 0%, #e0e7ef 100%);
+}
+
+.welcome-label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2d3748;
+    -fx-effect: dropshadow(gaussian, #b0b8c1, 4, 0.2, 0, 1);
+} 
