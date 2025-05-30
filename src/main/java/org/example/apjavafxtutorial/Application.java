@@ -1,30 +1,28 @@
 package org.example.apjavafxtutorial;
 
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-import java.util.Objects;
+import org.example.apjavafxtutorial.util.SceneManager;
 
 public class Application extends javafx.application.Application {
 
     private static final String TITLE = "JavaFX Application";
     private static final int WIDTH = 800;
     private static final int HEIGHT = 600;
-    private Scene currentScene;
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(
-                "/org/example/apjavafxtutorial/pages/loginPage/loginPage.fxml"
-        )));
+        // Initialize the SceneManager with the primary stage
+        SceneManager.getInstance().setPrimaryStage(stage);
 
-        stage.setTitle("JavaFX Application");
-        Scene scene = new Scene(root);
-        stage.setWidth(800);
-        stage.setHeight(600);
-        stage.setScene(scene);
+        // Set the stage properties
+        stage.setTitle(TITLE);
+        stage.setWidth(WIDTH);
+        stage.setHeight(HEIGHT);
+
+        // Load the initial scene
+        SceneManager.getInstance().switchScene(
+                "/org/example/apjavafxtutorial/pages/loginPage/loginPage.fxml");
+
         stage.show();
     }
 

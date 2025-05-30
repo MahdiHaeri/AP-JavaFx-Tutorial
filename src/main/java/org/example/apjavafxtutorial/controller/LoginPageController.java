@@ -1,13 +1,12 @@
 package org.example.apjavafxtutorial.controller;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
+import org.example.apjavafxtutorial.service.AuthenticationService;
+import org.example.apjavafxtutorial.service.impl.AuthenticationServiceImpl;
+import org.example.apjavafxtutorial.util.SceneManager;
 
 import java.io.IOException;
 
@@ -22,31 +21,23 @@ public class LoginPageController {
     @FXML
     private Button loginButton;
 
+    private final AuthenticationService authService;
+
+    public LoginPageController() {
+        this.authService = new AuthenticationServiceImpl();
+    }
+
     @FXML
     private void handleLoginButtonAction() {
         String username = usernameField.getText();
         String password = passwordField.getText();
 
-        System.out.println("Username: " + username);
-        System.out.println("Password: " + password);
-
-        if (!username.isEmpty() && !password.isEmpty()) {
+        if (authService.login(username, password)) {
             try {
-                FXMLLoader loader = new FXMLLoader(
-                        getClass().getResource("/org/example/apjavafxtutorial/pages/dashboardPage/dashboardPage.fxml"));
-                Parent dashboardRoot = loader.load();
-
-                // Get the controller and set the welcome message
-                DashboardPageController dashboardController = loader.getController();
-                dashboardController.setWelcomeMessage(username);
-
-                // Get the current stage from the login button
-                Stage stage = (Stage) loginButton.getScene().getWindow();
-
-                // Create and set the dashboard scene
-                Scene dashboardScene = new Scene(dashboardRoot);
-                stage.setScene(dashboardScene);
-                stage.show();
+                DashboardPageController controller = SceneManager.getInstance()
+                        .switchScene("/org/example/apjavafxtutorial/pages/dashboardPage/dashboardPage.fxml",
+                                DashboardPageController.class);
+                controller.setWelcomeMessage(username);
             } catch (IOException e) {
                 e.printStackTrace();
                 System.err.println("Error loading dashboard page: " + e.getMessage());
@@ -61,7 +52,6 @@ public class LoginPageController {
     private void handleCancelButtonAction() {
         usernameField.clear();
         passwordField.clear();
-
         System.out.println("Login cancelled.");
     }
 }
